@@ -1,36 +1,35 @@
 #include <iostream>
 using namespace std;
 
-int funkcija(int* niz, int velicina, int& nula)
+int& funkcija(int* niz, int velicina)
 {
-	nula = 0;
 	for (int i = 0; i < velicina; i += 1)
 	{
 		if (niz[i] > 0)
 		{
-
-			nula = i;
-			return i;
+			niz[i] = 0;
+			return  niz[i];
 		}
 	}
-	cout << "U nizu nema elementa veceg od 0" << endl;
-	return NULL;
 
+	return niz[0];
 }
 
 int main()
 {
-	int niz[] = { -1, -10, -50, -15, -11, -15 };
+	int niz[] = { -1, -10, 50, -15, -11, -15 };
 	int velicina = sizeof(niz) / sizeof(niz[0]);
-	int nula;
-	int referenca_nula = funkcija(niz, velicina, nula);
-	niz[referenca_nula] = 0;
-	if (referenca_nula != NULL)
+
+	int referenca = funkcija(niz, velicina);
+
+	if (referenca == 0)
 	{
+
 		for (int i = 0; i < velicina; i += 1)
 		{
 			cout << niz[i] << "\t";
 		}
+
 	}
 
 }
