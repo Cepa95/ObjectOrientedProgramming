@@ -15,7 +15,7 @@ public:
 
     void vrijednost_xyz(double x_os, double y_os, double z_os)
     {
-        x = x_os,
+            x = x_os,
             y = y_os,
             z = z_os;
     }
@@ -55,7 +55,7 @@ public:
     double udaljenost_tri_d(pozicija_tocka tocka1, pozicija_tocka tocka2)
     {
         double udaljenost3d;
-        double x_udaljenost3d = abs(tocka1.x - tocka2.x); // toni milun
+        double x_udaljenost3d = abs(tocka1.x - tocka2.x); 
         double y_udaljenost3d = abs(tocka1.y - tocka2.y);
         double z_udaljenost3d = abs(tocka1.z - tocka2.z);
         udaljenost3d = sqrt(pow(x_udaljenost3d, 2) + pow(y_udaljenost3d, 2) + pow(z_udaljenost3d, 2));
