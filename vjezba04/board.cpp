@@ -28,6 +28,7 @@
 
 	board :: board() //konstruktor bez argumenata je default konstruktor
 	{
+		//cout << "konstruktor"<<endl;
 		frame_set(20, 10);
 		border_element_set('o');
 		new_board = new char* [get_width()];
@@ -93,8 +94,24 @@
 
 	board :: board(board&& board_move) //shifta resurse
 	{
+		height = board_move.height;
+		width = board_move.width;
+		border_element = board_move.border_element;
 		this->new_board = board_move.new_board;
+
+		board_move.height = 0;
+		board_move.width = 0;
+		board_move.border_element = ' ';
 		board_move.new_board = nullptr;
+		/*cout << "moved" << endl;
+		for (int i = 0; i < get_width(); i += 1)
+		{
+			for (int j = 0; j < get_heigth(); j += 1)
+			{
+				cout << new_board[i][j];
+			}
+			cout << endl;
+		}*/
 
 	}
 
@@ -147,14 +164,14 @@
 			new_board[(int)round(dot.x)][(int)round(dot.y)] = ch;
 
 
-			for (int i = 0; i < get_width(); i += 1)
+			/*for (int i = 0; i < get_width(); i += 1)
 			{
 				for (int j = 0; j < get_heigth(); j += 1)
 				{
 					cout << new_board[i][j];
 				}
 				cout << endl;
-			}
+			}*/
 		}
 		else
 		{

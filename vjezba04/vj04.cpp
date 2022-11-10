@@ -2,10 +2,10 @@
 #include <cmath>
 #include "board.hpp"
 
-
 int main()
 {
 	board myboard;
+
 	//cout << board_copy.get_heigth();
 	//board board(15, 15, 'x');
 	point dot;
@@ -17,6 +17,8 @@ int main()
 	myboard.draw_line(dot1, dot2, 'x');
 	point dot3 = { 2, 2 };
 	point dot4 = { 8, 8 };
-	char** double_pointer=myboard.draw_line(dot3, dot4, 'x');
+	char** double_pointer = myboard.draw_line(dot3, dot4, 'x');
 	myboard.draw(double_pointer);
+	//board myboard2(move(myboard));
+
 }
