@@ -1,10 +1,6 @@
-
 #include "vector.hpp"
 
-using namespace std;
 using namespace OOP;
-
-
 
 int main()
 {
@@ -93,5 +89,4 @@ int main()
 	cin >> normalization;
 	normalization = normalization.member(normalization);
 	cout << normalization;
-
 }

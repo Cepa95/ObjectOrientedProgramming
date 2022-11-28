@@ -24,7 +24,7 @@ namespace OOP {
 
 		//Vec3(Vec3& vector3d);
 		friend istream& operator>>(istream& is, Vec3& vector3);
-		friend ostream& operator<<(ostream& os, Vec3& vector3);
+		friend ostream& operator<<(ostream& os, const Vec3& vector3);
 
 		Vec3& operator= (const Vec3& vector3);
 
@@ -49,6 +49,6 @@ namespace OOP {
 	};
 
 	istream& operator>>(istream& is, Vec3& vector3);
-	ostream& operator<<(ostream& os, Vec3& vector3);
+	ostream& operator<<(ostream& os, const Vec3& vector3);
 }
 
