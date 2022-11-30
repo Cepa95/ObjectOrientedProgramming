@@ -1,4 +1,5 @@
-#include "zivotinja.hpp"
+#include "animal.hpp"
+#include "spider.hpp"
 
 int spider::get_legs()
 {
@@ -10,13 +11,12 @@ string spider::get_species()
 	return name;
 }
 
-
-string tarantula :: get_species()
+string tarantula::get_species()
 {
-	return name; 
+	return name;
 }
 
-int tarantula :: get_legs() 
-{ 
-	return legs; 
+int tarantula::get_legs()
+{
+	return legs;
 }

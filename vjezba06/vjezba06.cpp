@@ -1,4 +1,8 @@
-#include "zivotinja.hpp"
+#include "animal.hpp"
+#include "bird.hpp"
+#include "insect.hpp"
+#include "spider.hpp"
+#include "counter.hpp"
 
 animal :: ~animal() {}
 
