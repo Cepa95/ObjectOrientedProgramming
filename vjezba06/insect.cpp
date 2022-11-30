@@ -1,24 +1,23 @@
-#include "zivotinja.hpp"
+#include "animal.hpp"
+#include "insect.hpp"
 
-
-int insect :: get_legs() 
-{ 
+int insect::get_legs()
+{
 	return 0;
 }
 
-string insect :: get_species() 
-{ 
+string insect::get_species()
+{
 	return name;
 }
 
-
-string cockroach :: get_species() 
-{ 
+string cockroach::get_species()
+{
 	return name;
 }
 
-int cockroach :: get_legs() 
-{ 
+int cockroach::get_legs()
+{
 	return legs;
 }
 
