@@ -1,12 +1,13 @@
 #include "exceptions.hpp"
 
-
 int put_number(const string& num)
 {
+	int counter = 0;
 	for (char const& c : num)
 	{
-		if (num[0] == '-' && isdigit(num[1]))
+		if (num[0] == '-' && isdigit(num[1]) && counter < 1)
 		{
+			counter += 1;
 			continue;
 		}
 		if (isdigit(c) == 0)
