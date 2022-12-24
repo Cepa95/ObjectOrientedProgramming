@@ -56,7 +56,7 @@ void TicTacToe :: display_board()
 
 		if (i == 0 || i == 1 || i == 3 || i == 4 || i == 6 || i == 7) // radi tablicu
 		{
-			cout << yellow << "  |"; // bojanje tablice crvenom bojom
+			cout << yellow << "  |"; // bojanje tablice zutom bojom
 		}
 
 		if (i == 2 || i == 5 || i == 9)
@@ -88,7 +88,7 @@ void TicTacToe :: choice(int player, int position)
 
 bool TicTacToe:: is_in_vector(int position)
 {
-	for (int x : vec) // stavljamo u vektor sve brojeve koje si unijeti, tako da ih vise ne smijemo koristiti, unosimo par linija nize
+	for (int x : vec) // stavljamo u vektor sve brojeve koji su unijeti, tako da ih vise ne smijemo koristiti, unosimo ih par linija nize
 	{
 		if (x == position)
 		{
