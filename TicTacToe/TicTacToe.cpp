@@ -5,7 +5,7 @@ TicTacToe::TicTacToe()
 {
 	player1 = 1;
 	player2 = 2;
-	check = 0;
+	check = 0; // provjera ima li pobjednika ili ne
 	position = 0;
 	score1 = 0; // pobjede prvog igraca
 	score2 = 0; // pobjede drugog igraca

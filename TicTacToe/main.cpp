@@ -1,6 +1,7 @@
 #include <iostream>
 #include "TicTacToe.hpp"
 #include "Player.hpp"
+#include "AIPlayer.hpp"
 #include "Game.hpp"
 
 int main()

@@ -51,7 +51,7 @@ void Game::choose_player_mode()
 	while (1)
 	{
 		cin >> decision;
-		if (!decision || decision < 1 || decision > 4)
+		if (decision < 1 || decision > 4)
 		{
 			throw "Nedozvoljena radnja"; // u slucaju da upisemo vamo neki string/char ili nedozvoljeni broj
 		}
