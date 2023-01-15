@@ -16,11 +16,7 @@ void AIPlayer::AI_player(int player)
 
 	while (board[random] != ' ')
 	{
-		if (board[random] == ' ')
-		{
-			break;
-		}
-		random = (rand() % 9); // nije zadovoljen if, petlja dok se ne zadovolji if
+		random = (rand() % 9); // petlja dok se ne zadovolji while
 	}
 	position = random;
 	vec.push_back(position);
