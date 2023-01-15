@@ -1,10 +1,19 @@
 #include <iostream>
 #include "TicTacToe.hpp"
 #include "Player.hpp"
+#include "Game.hpp"
 
 int main()
 {
-	Player game;
-	game.choose_player_mode();
-	return 0;
+	try
+	{
+		Game start;
+		start.choose_player_mode();
+	}
+
+	catch (const char* message)
+	{
+		cout << message;
+		return -1;
+	}
 }

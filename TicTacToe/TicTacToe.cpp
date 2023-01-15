@@ -1,41 +1,41 @@
 #include "TicTacToe.hpp"
 #include "Player.hpp"
 
-TicTacToe :: TicTacToe()
+TicTacToe::TicTacToe()
 {
-		player1 = 1;
-		player2 = 2;
-		check = 0;
-		position = 0;
-		score1 = 0; // pobjede prvog igraca
-		score2 = 0; // pobjede drugog igraca
-		score3 = 0; // koliko je bilo nerijesenih partija
-		counter = 1; // brojac mi je jedan da mi u display_game prvi samo udje jednom u petlju, smanjim potrebu za jednim whilom
+	player1 = 1;
+	player2 = 2;
+	check = 0;
+	position = 0;
+	score1 = 0; // pobjede prvog igraca
+	score2 = 0; // pobjede drugog igraca
+	score3 = 0; // koliko je bilo nerijesenih partija
+	counter = 1; // brojac mi je jedan da mi u display_game prvi samo udje jednom u petlju, smanjim potrebu za jednim whilom
 }
 
-void TicTacToe :: intro_display()
+void TicTacToe::intro_display()
 {
-		cout << cyan;
-		cout << "-----------TicTacToe-----------\n" << color_reset << yellow << endl;
-		cout << "           0 | 1 | 2         " << endl;
-		cout << "          -----------        " << endl;
-		cout << "           3 | 4 | 5         " << endl;
-		cout << "          -----------         " << endl;
-		cout << "           6 | 7 | 8         " << color_reset << endl;
+	cout << cyan;
+	cout << "-----------TicTacToe-----------\n" << color_reset << yellow << endl;
+	cout << "           0 | 1 | 2         " << endl;
+	cout << "          -----------        " << endl;
+	cout << "           3 | 4 | 5         " << endl;
+	cout << "          -----------         " << endl;
+	cout << "           6 | 7 | 8         " << color_reset << endl;
 }
 
-void TicTacToe :: mode_display()
+void TicTacToe::mode_display()
 {
-		cout << cyan;
-		cout << endl;
-		cout << "     Odaberite nacin igre:\n" << endl;
-		cout << "     Player vs Player[1]" << endl;
-		cout << "     Player vs Computer[2]" << endl;
-		cout << "     Computer vs Computer[3]" << endl;
-		cout << "     Exit[4]" << color_reset << endl;
+	cout << cyan;
+	cout << endl;
+	cout << "     Odaberite nacin igre:\n" << endl;
+	cout << "     Player vs Player[1]" << endl;
+	cout << "     Player vs Computer[2]" << endl;
+	cout << "     Computer vs Computer[3]" << endl;
+	cout << "     Exit[4]" << color_reset << endl;
 }
 
-void TicTacToe :: display_board()
+void TicTacToe::display_board()
 {
 	for (int i = 0; i < 9; i += 1)
 	{
@@ -73,7 +73,7 @@ void TicTacToe :: display_board()
 	cout << endl;
 }
 
-void TicTacToe :: choice(int player, int position)
+void TicTacToe::choice(int player, int position)
 {
 	cout << endl;
 	if (player == 1)
@@ -86,7 +86,7 @@ void TicTacToe :: choice(int player, int position)
 	}
 }
 
-bool TicTacToe:: is_in_vector(int position)
+bool TicTacToe::is_in_vector(int position)
 {
 	for (int x : vec) // stavljamo u vektor sve brojeve koji su unijeti, tako da ih vise ne smijemo koristiti, unosimo ih par linija nize
 	{
@@ -98,7 +98,7 @@ bool TicTacToe:: is_in_vector(int position)
 	return 1;
 }
 
-int TicTacToe :: check_situation()
+int TicTacToe::check_situation()
 {
 	if (board[0] == board[1] && board[1] == board[2] && board[0] != ' ') // provjera prvog reda
 	{
@@ -222,15 +222,15 @@ int TicTacToe :: check_situation()
 	return 0; // zavrsila je
 }
 
-void TicTacToe :: check_if_string()
+void TicTacToe::check_if_string() //  funkcija gdje cistimo string, ako ju pozovemo
 {
-	cin.clear();
+	cin.clear(); 
 	cin.ignore(numeric_limits<streamsize> ::max(), '\n');
 	cout << "Unesite broj, ali broj slobodne pozicije: ";
 	cin >> position;
 }
 
-void TicTacToe :: display_situation()
+void TicTacToe::display_situation()
 {
 	cout << endl;
 	cout << "Trenutno stanje:\n";
@@ -239,7 +239,7 @@ void TicTacToe :: display_situation()
 	cout << yellow << "Nerijeseno: " << score3 << color_reset << endl;
 }
 
-int TicTacToe :: display_result(int result)
+int TicTacToe::display_result(int result)
 {
 	if (check == 1)
 	{
