@@ -2,8 +2,9 @@
 #define GAME_H
 #include "TicTacToe.hpp"
 #include "Player.hpp"
+#include "AIPlayer.hpp"
 
-class Game : public Player
+class Game : public AIPlayer
 {
 public:
 	void continue_game_decision(int decision);
