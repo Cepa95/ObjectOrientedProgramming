@@ -222,7 +222,7 @@ int TicTacToe::check_situation()
 	return 0; // zavrsila je
 }
 
-void TicTacToe::check_if_string() //  funkcija gdje cistimo string, ako ju pozovemo
+void TicTacToe::check_if_string() //  funkcija gdje cistimo string, ako je string/char
 {
 	cin.clear(); 
 	cin.ignore(numeric_limits<streamsize> ::max(), '\n');

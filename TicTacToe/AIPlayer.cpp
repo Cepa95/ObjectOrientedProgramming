@@ -16,7 +16,7 @@ void AIPlayer::AI_player(int player)
 
 	while (board[random] != ' ')
 	{
-		random = (rand() % 9); // petlja dok se ne zadovolji while
+		random = (rand() % 9); // nije zadovoljen if, petlja dok se ne zadovolji if
 	}
 	position = random;
 	vec.push_back(position);
@@ -32,7 +32,7 @@ void AIPlayer::AI_game()
 		display_board();
 		check = check_situation();
 
-		if (display_result(check) != 0)
+		if (display_result(check))
 		{
 			break;
 		}
@@ -43,7 +43,7 @@ void AIPlayer::AI_game()
 		display_board();
 
 		check = check_situation();
-		if (display_result(check) != 0)
+		if (display_result(check))
 		{
 			break;
 		}
@@ -60,7 +60,7 @@ void AIPlayer::both_AI_game()
 		display_board();
 
 		check = check_situation();
-		if (display_result(check) != 0)
+		if (display_result(check))
 		{
 			break;
 		}
@@ -71,7 +71,7 @@ void AIPlayer::both_AI_game()
 		display_board();
 
 		check = check_situation();
-		if (display_result(check) != 0)
+		if (display_result(check))
 		{
 			break;
 		}
