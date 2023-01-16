@@ -38,26 +38,30 @@ void Player::player(int player)
 	vec.push_back(position); // nakon sta je igrac zadovoljio uvjete unosi se broj, koji se sad vise nece moci koristiti
 }
 
+
+bool Player::player_call(int Tplayer)
+{
+	player(Tplayer);// poziv igraca
+	choice(Tplayer, position); // nakon sto smo zadovoljili uvjete, unosimo u plocu X na odgovarajucu poziciju 
+
+	display_board(); // prikaz trenutne situacije
+	check = check_situation(); // gledamo ima li pobjednika
+	if (display_result(check)) // da smanjim broj cout-a 
+	{
+		return true;
+	}
+	return false;
+}
+
 void Player::two_player_game()
 {
 	while (1)
 	{
-		player(player1);// poziv igraca
-		choice(player1, position); // nakon sto smo zadovoljili uvjete, unosimo u plocu X na odgovarajucu poziciju 
-
-		display_board(); // prikaz trenutne situacije
-		check = check_situation(); // gledamo ima li pobjednika
-		if (display_result(check)) // da smanjim broj cout-a 
+		if(player_call(player1)) // ako je istina zavrsi s petljom
 		{
 			break;
 		}
-
-		player(player2);
-		choice(player2, position);
-
-		display_board();
-		check = check_situation();
-		if (display_result(check))
+		if (player_call(player2))
 		{
 			break;
 		}

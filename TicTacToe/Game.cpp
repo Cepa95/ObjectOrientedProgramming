@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-char Game::play_continuation() // da smanji potrebu za ponavljanjem iste recenice cetiri puta
+char Game::play_continuation()
 {
 	char continuation;
 	cout << cyan << "\nZelite li nastaviti igrati? Pritisnite y za nastaviti igrati ili bilo koju drugu tipku za kraj: " << color_reset;
@@ -31,13 +31,11 @@ void Game::continue_game_decision(int decision)
 			two_player_game();
 			continuation = play_continuation();
 		}
-
 		else if (decision == 2)
 		{
 			AI_game();
 			continuation = play_continuation();
 		}
-
 		else if (decision == 3)
 		{
 			both_AI_game();
@@ -66,7 +64,6 @@ void Game::choose_player_mode()
 			continue_game_decision(decision);
 			return;
 		}
-
 		else if (decision == 2)
 		{
 			cout << "Odabrali ste " << decision << ". opciju.\n";
@@ -74,7 +71,6 @@ void Game::choose_player_mode()
 			continue_game_decision(decision);
 			return;
 		}
-
 		else if (decision == 3)
 		{
 			cout << "Odabrali ste " << decision << ". opciju.\n";
@@ -82,7 +78,6 @@ void Game::choose_player_mode()
 			continue_game_decision(decision);
 			return;
 		}
-
 		else if (decision == 4)
 		{
 			continue_game_decision(decision);

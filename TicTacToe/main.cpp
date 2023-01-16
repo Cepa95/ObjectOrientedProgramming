@@ -4,6 +4,8 @@
 #include "AIPlayer.hpp"
 #include "Game.hpp"
 
+using namespace std;
+
 int main()
 {
 	try
@@ -11,7 +13,6 @@ int main()
 		Game start;
 		start.choose_player_mode();
 	}
-
 	catch (const char* message)
 	{
 		cout << message;
