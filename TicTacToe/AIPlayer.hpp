@@ -7,6 +7,7 @@ class AIPlayer : public Player
 {
 public:
 	void AI_player(int player);
+	bool AIPlayer_call(int Tplayer);
 	void AI_game();
 	void both_AI_game();
 };

@@ -43,27 +43,22 @@ void TicTacToe::display_board()
 		{
 			cout << "  " << blue << board[i] << color_reset;
 		}
-
 		else if (board[i] == 'O')
 		{
 			cout << "  " << red << board[i] << color_reset;
 		}
-
 		else
 		{
 			cout << "  " << board[i];
 		}
-
 		if (i == 0 || i == 1 || i == 3 || i == 4 || i == 6 || i == 7) // radi tablicu
 		{
 			cout << yellow << "  |"; // bojanje tablice zutom bojom
 		}
-
 		if (i == 2 || i == 5 || i == 9)
 		{
 			cout << endl;
 		}
-
 		if (i == 2 || i == 5)
 		{
 			cout << yellow << "------------------\n";

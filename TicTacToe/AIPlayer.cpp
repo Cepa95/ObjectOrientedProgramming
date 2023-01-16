@@ -13,7 +13,6 @@ void AIPlayer::AI_player(int player)
 		cout << endl << blue << "igrac" << player << color_reset << endl;
 
 	}
-
 	while (board[random] != ' ')
 	{
 		random = (rand() % 9); // nije zadovoljen if, petlja dok se ne zadovolji if
@@ -22,28 +21,30 @@ void AIPlayer::AI_player(int player)
 	vec.push_back(position);
 }
 
+bool AIPlayer::AIPlayer_call(int Tplayer)
+{
+	AI_player(Tplayer);
+
+	choice(Tplayer, position);
+	display_board();
+
+	check = check_situation();
+	if (display_result(check))
+	{
+		return true;
+	}
+	return false;
+}
+
 void AIPlayer::AI_game()
 {
 	while (1)
 	{
-		player(player1);
-		choice(player1, position);
-
-		display_board();
-		check = check_situation();
-
-		if (display_result(check))
+		if (player_call(player1))
 		{
 			break;
 		}
-
-		AI_player(player2);
-
-		choice(player2, position);
-		display_board();
-
-		check = check_situation();
-		if (display_result(check))
+		if (AIPlayer_call(player2))
 		{
 			break;
 		}
@@ -54,24 +55,11 @@ void AIPlayer::both_AI_game()
 {
 	while (1)
 	{
-		AI_player(player1);
-
-		choice(player1, position);
-		display_board();
-
-		check = check_situation();
-		if (display_result(check))
+		if (AIPlayer_call(player1))
 		{
 			break;
 		}
-
-		AI_player(player2);
-
-		choice(player2, position);
-		display_board();
-
-		check = check_situation();
-		if (display_result(check))
+		if (AIPlayer_call(player2))
 		{
 			break;
 		}
