@@ -84,6 +84,5 @@ void Game::choose_player_mode()
 			continue_game_decision(decision);
 			break;
 		}
-		cout << "Odaberite nacin igre: ";
 	}
 }

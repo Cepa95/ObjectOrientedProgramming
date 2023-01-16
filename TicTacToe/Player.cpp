@@ -47,7 +47,7 @@ void Player::two_player_game()
 
 		display_board(); // prikaz trenutne situacije
 		check = check_situation(); // gledamo ima li pobjednika
-		if (display_result(check) != 0) // da smanjim broj couta samo u slucaju 0 ne ulazi u if
+		if (display_result(check)) // da smanjim broj cout-a 
 		{
 			break;
 		}
@@ -57,7 +57,7 @@ void Player::two_player_game()
 
 		display_board();
 		check = check_situation();
-		if (display_result(check) != 0)
+		if (display_result(check))
 		{
 			break;
 		}
