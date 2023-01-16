@@ -1,5 +1,14 @@
 #include "Game.hpp"
 
+
+char Game::play_continuation()
+{
+	char continuation;
+	cout << cyan << "\nZelite li nastaviti igrati? Pritisnite y za nastaviti igrati ili bilo koju drugu tipku za kraj: " << color_reset;
+	cin >> continuation;
+	return continuation;
+}
+
 void Game::continue_game_decision(int decision)
 {
 	if (decision == 4) // izadji iz funkcije ako korisnik zeli zavrsiti s igrom
@@ -8,9 +17,8 @@ void Game::continue_game_decision(int decision)
 		return;
 	}
 
-	char continuation;
-	cout << cyan << "\nZelite li nastaviti igrati? Pritisnite y za nastaviti igrati ili bilo koju drugu tipku za kraj: " << color_reset;
-	cin >> continuation;
+	char continuation = play_continuation();
+
 	while (continuation == 'y')
 	{
 		for (int i = 0; board[i] != '\0'; i += 1) // vracamo board na pocetno stanje
@@ -22,22 +30,19 @@ void Game::continue_game_decision(int decision)
 		if (decision == 1)
 		{
 			two_player_game();
-			cout << cyan << "\nZelite li nastaviti igrati? Pritisnite y za nastaviti igrati ili bilo koju drugu tipku za kraj: " << color_reset;
-			cin >> continuation;
+			continuation = play_continuation();
 		}
 
 		else if (decision == 2)
 		{
 			AI_game();
-			cout << cyan << "\nZelite li nastaviti igrati? Pritisnite y za nastaviti igrati ili bilo koju drugu tipku za kraj: " << color_reset;
-			cin >> continuation;
+			continuation = play_continuation();
 		}
 
 		else if (decision == 3)
 		{
 			both_AI_game();
-			cout << cyan << "\nZelite li nastaviti igrati? Pritisnite y za nastaviti 33igrati ili bilo koju drugu tipku za kraj: " << color_reset;
-			cin >> continuation;
+			continuation = play_continuation();
 		}
 	}
 }

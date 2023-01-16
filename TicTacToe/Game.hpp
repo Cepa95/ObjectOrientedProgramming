@@ -7,6 +7,7 @@
 class Game : public AIPlayer
 {
 public:
+	char play_continuation();
 	void continue_game_decision(int decision);
 	void choose_player_mode();
 };
