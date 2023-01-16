@@ -1,7 +1,6 @@
 #include "Game.hpp"
 
-
-char Game::play_continuation()
+char Game::play_continuation() // da smanji potrebu za ponavljanjem iste recenice cetiri puta
 {
 	char continuation;
 	cout << cyan << "\nZelite li nastaviti igrati? Pritisnite y za nastaviti igrati ili bilo koju drugu tipku za kraj: " << color_reset;
